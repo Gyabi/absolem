@@ -1,4 +1,6 @@
-![absolem icon](./doc/img/absolem_icon2_transparent.png)
+<div align="center" style="margin: 20px 0;">
+    <img src="./doc/img/absolem_icon2_transparent.png" width="400" alt="Absolem logo">
+</div>
 
 <div align="center">
 
