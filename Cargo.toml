@@ -1,0 +1,18 @@
+[package]
+name = "absolem"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+absolem_core = { path = "absolem_core" }
+clap = { version = "4.5.53", features = ["derive"] }
+
+[workspace]
+members = [
+    "absolem_core",
+    "absolem_core/absolem_config",
+    "absolem_core/absolem_command_data_tree",
+    "absolem_core/absolem_record",
+    "absolem_core/absolem_shell",
+    "absolem_core/absolem_utils",
+]

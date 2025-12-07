@@ -1,0 +1,11 @@
+[package]
+name = "absolem_core"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+absolem_config = { path = "absolem_config" }
+absolem_command_data_tree = { path = "absolem_command_data_tree" }
+absolem_record = { path = "absolem_record" }
+absolem_shell = { path = "absolem_shell" }
+absolem_utils = { path = "absolem_utils" }

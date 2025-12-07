@@ -1,0 +1,18 @@
+{
+  "name": "Rust Development Container",
+  "build": {
+    "dockerfile": "../Dockerfile"
+  },
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash"
+  },
+  "extensions": [
+    "rust-lang.rust-analyzer",
+    "ms-vscode.cpptools",
+    "vadimcn.vscode-lldb",
+    "swellaby.vscode-rust-test-adapter",
+    "tamasfe.even-better-toml"
+  ],
+  "postCreateCommand": "cargo install cargo-edit",
+  "remoteUser": "root"
+}
