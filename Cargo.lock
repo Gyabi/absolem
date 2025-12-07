@@ -5,3 +5,37 @@ version = 4
 [[package]]
 name = "absolem"
 version = "0.1.0"
+dependencies = [
+ "absolem_core",
+]
+
+[[package]]
+name = "absolem_command_data_tree"
+version = "0.1.0"
+
+[[package]]
+name = "absolem_config"
+version = "0.1.0"
+
+[[package]]
+name = "absolem_core"
+version = "0.1.0"
+dependencies = [
+ "absolem_command_data_tree",
+ "absolem_config",
+ "absolem_record",
+ "absolem_shell",
+ "absolem_utils",
+]
+
+[[package]]
+name = "absolem_record"
+version = "0.1.0"
+
+[[package]]
+name = "absolem_shell"
+version = "0.1.0"
+
+[[package]]
+name = "absolem_utils"
+version = "0.1.0"

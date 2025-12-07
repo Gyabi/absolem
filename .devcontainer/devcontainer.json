@@ -10,7 +10,8 @@
     "rust-lang.rust-analyzer",
     "ms-vscode.cpptools",
     "vadimcn.vscode-lldb",
-    "swellaby.vscode-rust-test-adapter"
+    "swellaby.vscode-rust-test-adapter",
+    "tamasfe.even-better-toml"
   ],
   "postCreateCommand": "cargo install cargo-edit",
   "remoteUser": "root"
