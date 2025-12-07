@@ -27,6 +27,105 @@
                     "--bin=absolem"
                 ]
             }
+        },
+        {
+            "name": "Run 'abs call' command",
+            "type": "lldb",
+            "request": "launch",
+            "cargo": {
+                "args": ["run"]
+            },
+            "args": ["call", "-p", "group1/script1", "--", "arg1", "arg2"]
+        },
+        {
+            "name": "Run 'abs register' command",
+            "type": "lldb",
+            "request": "launch",
+            "cargo": {
+                "args": ["run"]
+            },
+            "args": ["register", "/path/to/script.sh", "-p", "group1/script1"]
+        },
+        {
+            "name": "Run 'abs create' command",
+            "type": "lldb",
+            "request": "launch",
+            "cargo": {
+                "args": ["run"]
+            },
+            "args": ["create", "-p", "group1/script1", "--open"]
+        },
+        {
+            "name": "Run 'abs record' command",
+            "type": "lldb",
+            "request": "launch",
+            "cargo": {
+                "args": ["run"]
+            },
+            "args": ["record", "--disable-replace-absolute-path"]
+        },
+        {
+            "name": "Run 'abs move' command",
+            "type": "lldb",
+            "request": "launch",
+            "cargo": {
+                "args": ["run"]
+            },
+            "args": ["move", "group1/script1", "group2/script2"]
+        },
+        {
+            "name": "Run 'abs delete' command",
+            "type": "lldb",
+            "request": "launch",
+            "cargo": {
+                "args": ["run"]
+            },
+            "args": ["delete", "group1/script1"]
+        },
+        {
+            "name": "Run 'abs print' command",
+            "type": "lldb",
+            "request": "launch",
+            "cargo": {
+                "args": ["run"]
+            },
+            "args": ["print", "-p", "group1/script1"]
+        },
+        {
+            "name": "Run 'abs list' command",
+            "type": "lldb",
+            "request": "launch",
+            "cargo": {
+                "args": ["run"]
+            },
+            "args": ["list"]
+        },
+        {
+            "name": "Run 'abs config view' command",
+            "type": "lldb",
+            "request": "launch",
+            "cargo": {
+                "args": ["run"]
+            },
+            "args": ["config", "view"]
+        },
+        {
+            "name": "Run 'abs config set' command",
+            "type": "lldb",
+            "request": "launch",
+            "cargo": {
+                "args": ["run"]
+            },
+            "args": ["config", "set", "editor_command", "vim"]
+        },
+        {
+            "name": "Run 'abs config delete' command",
+            "type": "lldb",
+            "request": "launch",
+            "cargo": {
+                "args": ["run"]
+            },
+            "args": ["config", "delete", "editor_command"]
         }
     ]
 }
