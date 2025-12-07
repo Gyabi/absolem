@@ -31,6 +31,16 @@
     - [Print list of registered shell scripts](#print-list-of-registered-shell-scripts)
       - [detail](#detail-8)
       - [command](#command-8)
+  - [Configuration](#configuration)
+    - [View configuration](#view-configuration)
+      - [detail](#detail-9)
+      - [command](#command-9)
+    - [Set configuration](#set-configuration)
+      - [detail](#detail-10)
+      - [command](#command-10)
+    - [Delete configuration](#delete-configuration)
+      - [detail](#detail-11)
+      - [command](#command-11)
 
 ## Execute Shell script
 ### execute registered shell script
@@ -111,7 +121,8 @@
       - autocomplete support for group name
 #### command
 - `abs record [--disable-replace-absolute-path]`
-- `abs record save [<register-path>]`
+    - start record mode
+    - in record mode, use command `:wq <register-path>` to save and exit record mode
 
 
 ## Edit shell and group
@@ -177,3 +188,39 @@
 - print list of registered shell scripts
 #### command
 - `abs list`
+
+## Configuration
+### View configuration
+#### detail
+- print current configuration
+#### command
+- `abs config view`
+
+### Set configuration
+#### detail
+- set configuration value
+- user can specify following arguments:
+- key
+    - mandatory
+    - configuration key
+    - available keys:
+      - editor_command
+        - command to open shell script in text editor
+- value
+    - mandatory
+    - configuration value
+#### command
+- `abs config set <key> <value>`
+
+### Delete configuration
+#### detail
+- delete configuration value
+- user can specify following arguments:
+- key
+    - mandatory
+    - configuration key
+    - available keys:
+      - editor_command
+        - command to open shell script in text editor
+#### command
+- `abs config delete <key>`
