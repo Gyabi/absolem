@@ -113,63 +113,21 @@ enum ConfigCommand {
 fn main() {
     let cli = Cli::parse();
 
+    let absolem_core = absolem_core::AbsolemCore::new();
+
     match cli.command {
-        Commands::Call { path: register_path, script_args } => mock_call(register_path, script_args),
-        Commands::Register { script_path, path } => mock_register(script_path, path),
-        Commands::Create { path: register_path, open } => mock_create(register_path, open),
-        Commands::Record { disable_replace_absolute_path } => mock_record(disable_replace_absolute_path),
-        Commands::Move { before_path: before_register_path, after_path: after_register_path } => mock_move(before_register_path, after_register_path),
-        Commands::Delete { path: register_path } => mock_delete(register_path),
-        Commands::Print { path: register_path } => mock_print(register_path),
-        Commands::List => mock_list(),
+        Commands::Call { path: register_path, script_args } => absolem_core.call_shell_script(register_path, script_args),
+        Commands::Register { script_path, path } => absolem_core.register_shell_script(script_path, path),
+        Commands::Create { path: register_path, open } => absolem_core.create_shell_script(register_path, open),
+        Commands::Record { disable_replace_absolute_path } => absolem_core.record_shell_script(disable_replace_absolute_path),
+        Commands::Move { before_path: before_register_path, after_path: after_register_path } => absolem_core.move_shell_script(before_register_path, after_register_path),
+        Commands::Delete { path: register_path } => absolem_core.delete_shell_script(register_path),
+        Commands::Print { path: register_path } => absolem_core.print_shell_script(register_path),
+        Commands::List => absolem_core.list_shell_scripts(),
         Commands::Config { command } => match command {
-            ConfigCommand::View => mock_config_view(),
-            ConfigCommand::Set { key, value } => mock_config_set(key, value),
-            ConfigCommand::Delete { key } => mock_config_delete(key),
+            ConfigCommand::View => absolem_core.config_view(),
+            ConfigCommand::Set { key, value } => absolem_core.config_set(key, value),
+            ConfigCommand::Delete { key } => absolem_core.config_delete(key),
         },
     }
-}
-
-fn mock_call(path: Option<String>, script_args: Vec<String>) {
-    println!("Mock call: {:?}, args: {:?}", path, script_args);
-}
-
-fn mock_register(script_path: String, path: Option<String>) {
-    println!("Mock register: {}, path: {:?}", script_path, path);
-}
-
-fn mock_create(path: Option<String>, open: bool) {
-    println!("Mock create: {:?}, open: {}", path, open);
-}
-
-fn mock_record(disable_replace_absolute_path: bool) {
-    println!("Mock record: disable_replace_absolute_path: {}", disable_replace_absolute_path);
-}
-
-fn mock_move(before_path: String, after_path: String) {
-    println!("Mock move: {} -> {}", before_path, after_path);
-}
-
-fn mock_delete(path: String) {
-    println!("Mock delete: {}", path);
-}
-
-fn mock_print(path: Option<String>) {
-    println!("Mock print: {:?}", path);
-}
-
-fn mock_list() {
-    println!("Mock list");
-}
-
-fn mock_config_view() {
-    println!("Mock config view");
-}
-
-fn mock_config_set(key: String, value: String) {
-    println!("Mock config set: {} = {}", key, value);
-}
-
-fn mock_config_delete(key: String) {
-    println!("Mock config delete: {}", key);
 }
