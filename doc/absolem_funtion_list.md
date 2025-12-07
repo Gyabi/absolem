@@ -1,36 +1,86 @@
-# CLI Script Manager --- 機能一覧
+# Function list
 
-## 1. コマンド保存機能
+## Register shell script
+### detail
+- register selected shell script
+- user can specify shell script name (default: file name without extension as shell script name)
+- all shell scripts are grouped
+  - create new group if needed
+  - select group to register shell script
+### command
+- TBD
 
--   最近実行したコマンドを `.sh` として保存
--   保存先はアプリ専用ディレクトリ
--   保存時に相対パス → 絶対パスへ自動変換（デフォルト）
--   相対パスでの保存も選択可能
--   `.sh` に説明文を付与して保存可能
+## Edit registerd information
+### detail
+- edit group infomation
+  - create new group
+  - delete group
+  - rename group
+  - move group
+- move shell script to another group
+- rename registered shell script
+### command
+- TBD
 
-## 2. 階層化・グループ化
+## Call registered shell script
+### detail
+- call selected shell script
+- use this command without arguments
+  - show list of registered shell scripts
+  - user can select shell script to call
+- use this command with group name argument
+  - show list of registered shell scripts in the group
+  - user can select shell script to call
+- use this command with group name and shell script name arguments
+  - call specified shell script directly
+- autocomplete support for group name and shell script name
+- if shell script has arguments, user can use arguments
+### command
+- TBD
 
--   `.sh` を階層（ディレクトリ風）に整理
--   既存 `.sh` を実ファイル移動せずリンク登録可能
--   階層を `cd` で移動し、Linux風操作が可能
--   階層内容を `ls` で確認
+## Print list of registered shell scripts
+### detail
+- print list of registered shell scripts
+### command
+- TBD
 
-## 3. 実行機能
+## Print registered shell scripts
+### detail
+- print shell script content
+- use this command without arguments
+  - show list of registered shell scripts
+  - user can select shell script to print
+- use this command with group name argument
+  - show list of registered shell scripts in the group
+  - user can select shell script to print
+- use this command with group name and shell script name arguments
+  - print specified shell script content directly
+- autocomplete support for group name and shell script name
+### command
+- TBD
 
--   階層内の `.sh` を `run` コマンドで実行
--   fuzzy（部分一致）でのスクリプト検索実行
--   番号選択実行モード（履歴や一覧から選択）
--   最近使った `.sh` のショートアクセス機能
--   エイリアスを設定し短縮呼び出し可能
 
-## 4. 利便性・補助機能
+## Edit registered shell script
+### detail
+- open in configured editor to edit selected shell script
+  - user can configure editor command in config file
+- use this command without arguments
+  - show list of registered shell scripts
+  - user can select shell script to edit
+- use this command with group name argument
+  - show list of registered shell scripts in the group
+  - user can select shell script to edit
+- use this command with group name and shell script name arguments
+  - open specified shell script in editor directly
+- autocomplete support for group name and shell script name
 
--   タブ補完（階層・スクリプト名）
--   TUI選択モード（fzf風）
--   階層ツリー表示コマンド
--   実行前確認（dry-run）
+### command
+- TBD
 
-## 5. セーフティ
-
--   危険コマンドの警告
--   実行ログ保存（任意）
+## Record command to shell script
+### detail
+- enter command to record mode
+- in record mode, all command line inputs are recorded to tmp file
+- exit record mode by special command and save recorded commands to selected group and shell script name
+### command
+- TBD
