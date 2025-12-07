@@ -8,7 +8,7 @@
   - create new group if needed
   - select group to register shell script
 ### command
-- TBD
+- `abs register <script-path> [--group <group-path>] [--name <script-name>]`
 
 ## Edit registerd information
 ### detail
@@ -20,7 +20,11 @@
 - move shell script to another group
 - rename registered shell script
 ### command
-- TBD
+- `abs group create <group-name>`
+- `abs group delete <group-name>`
+- `abs group rename <old-group-name> <new-group-name>`
+- `abs group move <script-name> <target-group-name>`
+- `abs script rename <old-script-name> <new-script-name>`
 
 ## Call registered shell script
 ### detail
@@ -36,13 +40,13 @@
 - autocomplete support for group name and shell script name
 - if shell script has arguments, user can use arguments
 ### command
-- TBD
+- `abs call [--group <group-name>] [--script <script-name>] [-- <script-args>]`
 
 ## Print list of registered shell scripts
 ### detail
 - print list of registered shell scripts
 ### command
-- TBD
+- `abs list`
 
 ## Print registered shell scripts
 ### detail
@@ -57,8 +61,7 @@
   - print specified shell script content directly
 - autocomplete support for group name and shell script name
 ### command
-- TBD
-
+- `abs print [--group <group-name>] [--script <script-name>]`
 
 ## Edit registered shell script
 ### detail
@@ -73,9 +76,8 @@
 - use this command with group name and shell script name arguments
   - open specified shell script in editor directly
 - autocomplete support for group name and shell script name
-
 ### command
-- TBD
+- `abs edit [--group <group-name>] [--script <script-name>]`
 
 ## Record command to shell script
 ### detail
@@ -83,4 +85,4 @@
 - in record mode, all command line inputs are recorded to tmp file
 - exit record mode by special command and save recorded commands to selected group and shell script name
 ### command
-- TBD
+- `abs record [--group <group-name>] [--script <script-name>]`
