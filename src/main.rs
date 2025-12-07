@@ -116,13 +116,30 @@ fn main() {
     let absolem_core = absolem_core::AbsolemCore::new();
 
     match cli.command {
-        Commands::Call { path: register_path, script_args } => absolem_core.call_shell_script(register_path, script_args),
-        Commands::Register { script_path, path } => absolem_core.register_shell_script(script_path, path),
-        Commands::Create { path: register_path, open } => absolem_core.create_shell_script(register_path, open),
-        Commands::Record { disable_replace_absolute_path } => absolem_core.record_shell_script(disable_replace_absolute_path),
-        Commands::Move { before_path: before_register_path, after_path: after_register_path } => absolem_core.move_shell_script(before_register_path, after_register_path),
-        Commands::Delete { path: register_path } => absolem_core.delete_shell_script(register_path),
-        Commands::Print { path: register_path } => absolem_core.print_shell_script(register_path),
+        Commands::Call {
+            path: register_path,
+            script_args,
+        } => absolem_core.call_shell_script(register_path, script_args),
+        Commands::Register { script_path, path } => {
+            absolem_core.register_shell_script(script_path, path)
+        }
+        Commands::Create {
+            path: register_path,
+            open,
+        } => absolem_core.create_shell_script(register_path, open),
+        Commands::Record {
+            disable_replace_absolute_path,
+        } => absolem_core.record_shell_script(disable_replace_absolute_path),
+        Commands::Move {
+            before_path: before_register_path,
+            after_path: after_register_path,
+        } => absolem_core.move_shell_script(before_register_path, after_register_path),
+        Commands::Delete {
+            path: register_path,
+        } => absolem_core.delete_shell_script(register_path),
+        Commands::Print {
+            path: register_path,
+        } => absolem_core.print_shell_script(register_path),
         Commands::List => absolem_core.list_shell_scripts(),
         Commands::Config { command } => match command {
             ConfigCommand::View => absolem_core.config_view(),

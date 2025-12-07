@@ -12,6 +12,9 @@ RUN apt-get update && apt-get install -y \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
+# Install rustfmt and clippy
+RUN rustup component add rustfmt clippy
+
 # Copy the current directory contents into the container
 COPY . .
 

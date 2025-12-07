@@ -1,5 +1,11 @@
 pub struct AbsolemCore;
 
+impl Default for AbsolemCore {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl AbsolemCore {
     pub fn new() -> Self {
         AbsolemCore
@@ -50,7 +56,6 @@ impl AbsolemCore {
     }
 }
 
-
 fn mock_call(path: Option<String>, script_args: Vec<String>) {
     println!("Mock call: {:?}, args: {:?}", path, script_args);
 }
@@ -64,7 +69,10 @@ fn mock_create(path: Option<String>, open: bool) {
 }
 
 fn mock_record(disable_replace_absolute_path: bool) {
-    println!("Mock record: disable_replace_absolute_path: {}", disable_replace_absolute_path);
+    println!(
+        "Mock record: disable_replace_absolute_path: {}",
+        disable_replace_absolute_path
+    );
 }
 
 fn mock_move(before_path: String, after_path: String) {
@@ -94,7 +102,6 @@ fn mock_config_set(key: String, value: String) {
 fn mock_config_delete(key: String) {
     println!("Mock config delete: {}", key);
 }
-
 
 #[cfg(test)]
 mod tests {
