@@ -9,11 +9,12 @@ Create, organize, and execute them with ease.
 
 </div>
 
-# Develop Env
-TBD
+# Develop
+- use vscode devcontainer
+-```reopen in container```
 
 # System Design
-TBD
+![system design](./doc/software_block_diagram.drawio.svg)
 
 # Usage
 TBD
