@@ -44,15 +44,33 @@ impl AbsolemCore {
     }
 
     pub fn config_view(&self) {
+        #[cfg(feature = "use_mock_fn")]
         mock_config_view();
+
+        #[cfg(not(feature = "use_mock_fn"))]
+        absolem_config::Config::new().view();
     }
 
     pub fn config_set(&self, key: String, value: String) {
+        #[cfg(feature = "use_mock_fn")]
         mock_config_set(key, value);
+
+        #[cfg(not(feature = "use_mock_fn"))]
+        {
+            let mut config = absolem_config::Config::new();
+            config.set(&key, &value);
+        }
     }
 
     pub fn config_delete(&self, key: String) {
+        #[cfg(feature = "use_mock_fn")]
         mock_config_delete(key);
+
+        #[cfg(not(feature = "use_mock_fn"))]
+        {
+            let mut config = absolem_config::Config::new();
+            config.delete(&key);
+        }
     }
 }
 

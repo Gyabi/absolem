@@ -9,3 +9,6 @@ absolem_command_data_tree = { path = "absolem_command_data_tree" }
 absolem_record = { path = "absolem_record" }
 absolem_shell = { path = "absolem_shell" }
 absolem_utils = { path = "absolem_utils" }
+
+[features]
+use_mock_fn = []
