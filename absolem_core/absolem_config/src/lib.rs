@@ -8,6 +8,7 @@ const CONFIG_PATH: &str = "~/.absolem/config.toml";
 #[derive(Serialize, Deserialize, Debug, Default)]
 pub struct Config {
     pub editor_command: Option<String>,
+    #[serde(skip)]
     config_path: String,
 }
 
