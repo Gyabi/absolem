@@ -16,3 +16,11 @@ members = [
     "absolem_core/absolem_shell",
     "absolem_core/absolem_utils",
 ]
+
+[features]
+default = []
+use_mock_fn = ["absolem_core/use_mock_fn"]
+
+[workspace.dependencies]
+toml = "0.7"
+serde = { version = "1.0", features = ["derive"] }
